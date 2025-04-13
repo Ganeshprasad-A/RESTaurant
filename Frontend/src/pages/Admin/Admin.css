@@ -1,0 +1,57 @@
+.admin-card
+{
+    /* background-color: red; */
+    display: grid;
+    gap:20px;
+    grid-template-columns: 1fr 1fr ;
+    padding: 20px;
+    margin-top: 20px;
+}
+.admin-card li
+{
+    list-style-type: none;
+}
+.admin-card strong
+{
+    color:tomato;
+}
+.admin-card p
+{
+    margin: 10px 0px;
+}
+.admin-page
+{
+    
+    display: grid;
+    gap:10px;
+    grid-template-columns: 1fr 400px;
+    /* background-color: blue; */
+}
+
+.admin-card button
+{
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    background-color: rgb(64, 193, 64);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.179);
+    cursor: pointer;
+}
+.admin-card button:hover
+{
+    transform: scale(1.05);
+}
+.admin-image
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 20px;
+}
+.admin-image img
+{
+    width: 250px;
+}

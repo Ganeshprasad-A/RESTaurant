@@ -1,0 +1,118 @@
+.placeorder
+{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
+.placeorder .left
+{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    margin-top: 13px;
+}
+.placeorder .left:hover
+{
+    transform: scale(1.05);
+}
+.placeorder .left input
+{
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border:2px gray solid;
+    outline-color: tomato;
+}
+.placeorder .left button
+{
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 7px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+}
+
+.placeorder .left img
+{
+    width: 50px;
+}
+.placeorder .left .image-title
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    gap: 15px;
+
+}
+
+.right-section
+{
+    padding: 20px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    width: 400px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.right-section:hover
+{
+    transform: scale(1.05);
+}
+
+.right-section .image-title
+{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+} 
+.cart-total-details
+{
+    display: flex;
+    align-items: center;
+    height:40px;
+    padding: 0 50px;
+    font-size: 18px;
+    justify-content: space-between;
+}
+.right-section button
+{
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: tomato;
+    margin-top: 25px;
+    border-radius: 8px;
+    display: flex;
+    place-self: center;
+    cursor: pointer;
+}
+.right-section button:hover
+{
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+@media(max-width:750px)
+{
+    .placeorder
+    {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+}
+

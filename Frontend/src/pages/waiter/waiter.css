@@ -1,0 +1,18 @@
+.waiter-main 
+{
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+.waiter-image
+{
+    /* background-color: green; */
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.waiter-image img
+{
+    width:250px;
+}

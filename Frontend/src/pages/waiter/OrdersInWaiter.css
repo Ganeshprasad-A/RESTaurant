@@ -1,0 +1,101 @@
+.waiter
+{
+    display: flex;
+    /* background-color: aqua; */
+    gap: 40px;
+    justify-content: start;
+    padding: 20px;
+}
+.waiter-order 
+{
+    /* background-color: red; */
+    padding: 20px;
+    
+}
+.waiter-order .waiter-title
+{
+    text-align: center;
+    /* color: tomato; */
+}
+.waiter-order-kitchen
+{
+    /* background-color: blue; */
+    padding: 20px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.19);
+    border-radius: 10px;
+    border: 2px solid tomato;
+    margin: 10px 0; 
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+   
+}
+.waiter-order-customer
+{
+    padding: 20px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.19);
+    border-radius: 10px;
+    border: 2px solid green;
+    margin: 10px 0; 
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.waiter-order-customer button
+{
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color:white;
+    cursor: pointer;
+    border-radius: 9px;
+    margin-top: 20px;
+}
+
+.waiter-order-kitchen button
+{
+    padding: 10px 20px;
+    border: none;
+    background-color: tomato;
+    color:white;
+    cursor: pointer;
+    border-radius: 9px;
+}
+.waiter-order-kitchen button:hover
+{
+    opacity: 0.97;
+}
+.waiter-order-kitchen:hover
+{
+    transform: scale(1.05);
+}
+.waiter-order-kitchen li
+{
+    list-style: none;
+    margin: 5px 0;
+
+}
+.waiter-order-kitchen p
+{
+    margin: 10px;
+}
+.waiter-order-customer button:hover
+{
+    opacity: 0.97;
+}
+.waiter-order-customer:hover
+{
+    transform: scale(1.05);
+}
+.waiter-order-customer li
+{
+    list-style: none;
+    margin: 5px 0;
+
+}
+.waiter-order-customer p
+{
+    margin: 10px;
+}
+
+.no-order
+{
+    margin-top: 20px;
+    text-align: center;
+}
