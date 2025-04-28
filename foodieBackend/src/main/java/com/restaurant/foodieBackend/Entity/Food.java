@@ -18,9 +18,10 @@ import lombok.Setter;
 public class Food {
     
     @Id
-    private Long id;
+    private Long _id;
     private String name;
+    private String image;
     private double price;
     private String description;
-    private String imageId;
+    private String category;
 }

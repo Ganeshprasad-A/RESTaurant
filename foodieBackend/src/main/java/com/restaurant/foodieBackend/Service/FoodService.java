@@ -35,9 +35,9 @@ public class FoodService {
         {
             Food food=foodOptional.get();
             foodItemRepository.deleteById(id);
-            if(food.getImageId()!=null)
+            if(food.getImage()!=null)
             {
-                gridFsTemplate.delete(Query.query(Criteria.where("_id").is(food.getImageId())));
+                gridFsTemplate.delete(Query.query(Criteria.where("_id").is(food.getImage())));
             }
             return true;
         }

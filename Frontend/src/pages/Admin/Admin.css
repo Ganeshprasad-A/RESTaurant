@@ -55,3 +55,27 @@
 {
     width: 250px;
 }
+.food-add
+{
+    background-color: aqua;
+    height: 400px;
+    margin-top: 50px;
+    padding: 30px;
+    
+}
+.food-input
+{
+    width: 100%;
+}
+table
+{
+    width: 100%;
+}
+tr
+{
+    height: 50px;
+}
+td
+{
+    font-weight: 700;
+}

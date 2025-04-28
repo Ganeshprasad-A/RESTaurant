@@ -13,9 +13,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FoodDTO {
-    private Long id;
+    private Long _id;
     private String name;
+    private String image;
     private double price;
     private String description;
-    private String imageUrl;
+    private String category;
 }

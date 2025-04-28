@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.gridfs.GridFsOperations;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ import com.restaurant.foodieBackend.Service.FoodService;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/food")
 public class FoodController {
     @Autowired
@@ -43,25 +45,27 @@ public class FoodController {
     private GridFsOperations gridFsOperations;
 
     @PostMapping("/add")
-    public ResponseEntity<String> addFoodItem(
+    public ResponseEntity<Food> addFoodItem(
             @RequestParam("id") Long id,
             @RequestParam("name") String name,
             @RequestParam("price") double price,
             @RequestParam("description") String description,
-            @RequestParam("image") MultipartFile image) throws IOException {
+            @RequestParam("image") MultipartFile image,
+            @RequestParam("category")String category) throws IOException {
         ObjectId imageId = gridFsTemplate.store(image.getInputStream(), image.getOriginalFilename(),
                 image.getContentType());
 
         Food food = new Food();
-        food.setId(id);
+        food.set_id(id);
         food.setName(name);
         food.setPrice(price);
         food.setDescription(description);
-        food.setImageId(imageId.toHexString());
+        food.setImage(imageId.toHexString());
+        food.setCategory(category);
 
-        foodService.saveFoodItem(food);
+       
 
-        return ResponseEntity.ok("Food item added successfully");
+        return ResponseEntity.ok( foodService.saveFoodItem(food));
     }
 
     @GetMapping("/all")
@@ -69,13 +73,15 @@ public class FoodController {
         List<Food> foodItems = foodService.getAllFoodItems();
         return foodItems.stream().map(item -> {
             FoodDTO dto = new FoodDTO();
-            dto.setId(item.getId());
+            dto.set_id(item.get_id());
             dto.setName(item.getName());
             dto.setPrice(item.getPrice());
             dto.setDescription(item.getDescription());
-            dto.setImageUrl("/food/image/" + item.getImageId());
+            dto.setCategory(item.getCategory());
+            dto.setImage("/food/image/" + item.getImage());
             return dto;
         }).collect(Collectors.toList());
+        
     }
 
     @GetMapping("/image/{id}")
